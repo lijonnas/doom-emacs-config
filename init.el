@@ -22,9 +22,13 @@
        :completion
        (company                                         ; the ultimate code completion backend
          +childframe)                                   ; ... when your children are better than you
-       ;;helm                                           ; the *other* search engine for love and life
+       ;;(helm                                           ; the *other* search engine for love and life
+       ;; +fuzzy                                         ; Enables fuzzy completion for Helm searches
+       ;; +childframe                                    ; display in a floating child frame
+       ;; +icons                                         ; supports both all-the-icons and treemacs icons
        ;;ido                                            ; the other *other* search engine...
        (ivy                                             ; a search engine for love and life
+        ;; +fuzzy                                          ; Enables fuzzy completion for Ivy searches
         +icons                                          ; ... icons are nice
         +childframe                                     ; ... when your children are better than you
         +prescient)                                     ; ... I know what I want(ed)
@@ -109,7 +113,7 @@
         +forge)                                         ; interface with git forges
        make                                             ; run make tasks from Emacs
        ;;pass                                           ; password manager for nerds
-       ;;pdf                                            ; pdf enhancements
+       pdf                                            ; pdf enhancements
        ;;prodigy                                        ; FIXME managing external services & code builders
        ;;rgb                                            ; creating color strings
        ;;taskrunner                                     ; taskrunner for all your projects
@@ -150,6 +154,7 @@
        ;;julia                                          ; a better, faster MATLAB
        ;;kotlin                                         ; a better, slicker Java(Script)
        (latex                                           ; writing papers in Emacs has never been so fun
+        ;; +lsp
         +latexmk                                        ; what else would you use?
         +cdlatex                                        ; quick maths symbols
         +fold)                                          ; fold the clutter away nicities
@@ -167,10 +172,10 @@
         +brain                                          ; Enables org-brain integration
         +hugo                                           ; use Emacs for hugo blogging
         +journal                                        ; Enables org-journal integration
-        ;;+noter                                        ; enhanced PDF notetaking
+        +noter                                        ; enhanced PDF notetaking
         ;;+jupyter                                      ; ipython/jupyter support for babel
-        ;;+pandoc                                       ; export-with-pandoc support
-        ;;+gnuplot                                      ; who doesn't like pretty pictures
+        +pandoc                                       ; export-with-pandoc support
+        +gnuplot                                      ; who doesn't like pretty pictures
         ;;+pomodoro                                     ; be fruitful with the tomato technique
         +present                                        ; using org-mode for presentations
         +roam)                                          ; wander around notes
@@ -187,7 +192,7 @@
        ;;(ruby +rails)                                  ; 1.step {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
        ;; (rust +lsp)                                   ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
        ;;scala                                          ; java, but good
-       ;; scheme                                        ; a fully conniving family of lisps
+       scheme                                        ; a fully conniving family of lisps
        (sh +lsp)                                        ; she sells {ba,z,fi}sh shells on the C xor
        ;;sml
        ;;solidity                                       ; do you need a blockchain? No.
