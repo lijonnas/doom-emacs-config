@@ -45,6 +45,6 @@
 
 ;; (after! org
   ;; (set-popup-rule! "Capture" :side 'right :size .30 :select t))
-(after! org
-  (set-popup-rule! "^\\*Capture*" '((slot . -1) (side . right) (size . 80)) '((modeline . nil) (select . t)))
-  )
+;; (after! org
+  ;; (set-popup-rule! "^\\*Capture*" '((slot . -1) (side . right) (size . 80)) '((modeline . nil) (select . t)))
+  ;; )

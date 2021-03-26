@@ -40,8 +40,7 @@
        ;;hydra
        ;;indent-guides                                  ; highlighted indent columns
        (ligatures                                       ; ligatures and symbols to make your code pretty again
-        +extra
-        +iosevka)
+        +extra)
        ;;minimap                                        ; show a map of the code on the side
        modeline                                         ; snazzy, Atom-inspired modeline, plus API
        nav-flash                                        ; blink cursor line after big motions
@@ -63,7 +62,7 @@
        :editor
        (evil +everywhere)                               ; come to the dark side, we have cookies
        ;; file-templates                                ; auto-snippets for empty files
-       ;; fold                                          ; (nigh) universal code folding
+       fold                                          ; (nigh) universal code folding
        ;;(format +onsave)                               ; automated prettiness
        ;;god                                            ; run Emacs commands without modifier keys
        ;;lispy                                          ; vim for lisp, for people who don't like vim
@@ -99,7 +98,7 @@
        ;;debugger                                       ; FIXME stepping through code, to help you add bugs
        ;;direnv
        ;;docker
-       ;;editorconfig                                   ; let someone else argue about tabs vs spaces
+       ;; editorconfig                                   ; let someone else argue about tabs vs spaces
        ;;ein                                            ; tame Jupyter notebooks with emacs
        (eval +overlay)                                  ; run code, run (also, repls)
        ;;gist                                           ; interacting with github gists
@@ -109,12 +108,12 @@
         +forge)                                         ; interface with git forges
        make                                             ; run make tasks from Emacs
        ;;pass                                           ; password manager for nerds
-       ;;pdf                                            ; pdf enhancements
+       pdf                                            ; pdf enhancements
        ;;prodigy                                        ; FIXME managing external services & code builders
        ;;rgb                                            ; creating color strings
        ;;taskrunner                                     ; taskrunner for all your projects
        ;;terraform                                      ; infrastructure as code
-       ;;tmux                                           ; an API for interacting with tmux
+       tmux                                           ; an API for interacting with tmux
        ;;upload                                         ; map local to remote projects via ssh/ftp
 
        :os
@@ -169,7 +168,7 @@
         +journal                                        ; Enables org-journal integration
         ;;+noter                                        ; enhanced PDF notetaking
         ;;+jupyter                                      ; ipython/jupyter support for babel
-        ;;+pandoc                                       ; export-with-pandoc support
+        ;; +pandoc                                       ; export-with-pandoc support
         ;;+gnuplot                                      ; who doesn't like pretty pictures
         ;;+pomodoro                                     ; be fruitful with the tomato technique
         +present                                        ; using org-mode for presentations

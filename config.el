@@ -243,6 +243,32 @@
           ("FIXME" . "IndianRed")
           )))
 
+(defun org-hugo-new-subtree-post-capture-template ()
+  "Returns `org-capture' template string for new Hugo post.
+See `org-capture-templates' for more information."
+  (let* ((title (read-from-minibuffer "Post Title: ")) ;Prompt to enter the post title
+         (fname (org-hugo-slug title)))
+    (mapconcat #'identity
+               `(
+                 ,(concat "* TODO " title)
+                 ":PROPERTIES:"
+                 ,(concat ":EXPORT_HUGO_BUNDLE: " fname)
+                 ":EXPORT_FILE_NAME: index"
+                 ":END:"
+                 "%?\n")                ;Place the cursor here finally
+               "\n")))
+
+(after! org
+  (add-to-list 'org-capture-templates
+             '("h"                ;`org-capture' binding + h
+               "Hugo post"
+               entry
+               ;; It is assumed that below file is present in `org-directory'
+               ;; and that it has a "Blog Ideas" heading. It can even be a
+               ;; symlink pointing to the actual location of all-posts.org!
+               (file+headline "~/posts.org" "Inbox")
+               ;;(file+olp "/home/burgess/Documents/Org/posts.org" "blog")
+               (function org-hugo-new-subtree-post-capture-template))))
 ;; Org visual settings
 ;; (add-hook! org-mode :append
            ;; #'visual-line-mode
