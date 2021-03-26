@@ -146,12 +146,14 @@
 ;;   (setq company-idle-delay 0.5
 ;;         company-minimum-prefix-length 2)
 ;;   (setq company-show-numbers t)
+;;   (setq company-box-frontend company-box-scrollbar-window)
 ;; (add-hook 'evil-normal-state-entry-hook #'company-abort)) ;; make aborting less annoying.
 
 ;; Enable logging of done tasks
 (after! org
   (setq org-log-done t)
-  (setq org-log-into-drawer t))
+  (setq org-log-into-drawer t)
+  (setq org-support-shift-select t))
 
 ;; ;; Org GTD
 ;; (use-package! org-gtd
