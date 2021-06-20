@@ -19,8 +19,13 @@
 ;;
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
-(setq doom-font (font-spec :family "Iosevka Term SS04" :size 14 :weight 'semi-light)
-      doom-variable-pitch-font (font-spec :family "Iosevka Aile" :size 13))
+(setq doom-font (font-spec :family "Iosevka Term SS04" :size 14)
+      doom-variable-pitch-font (font-spec :family "Iosevka Aile" :size 14))
+;; doom-font (font-spec :family "JetBrains Mono" :size 24)
+;;       doom-big-font (font-spec :family "JetBrains Mono" :size 36)
+;;       doom-variable-pitch-font (font-spec :family "Overpass" :size 24)
+;;       doom-unicode-font (font-spec :family "JuliaMono")
+;;       doom-serif-font (font-spec :family "IBM Plex Mono" :weight 'light))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
@@ -61,17 +66,6 @@
 ;; (add-hook 'org-mode-hook 'my-buffer-face-mode-variable)
 
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
-
-;; (defun doom-modeline-conditional-buffer-encoding ()
-;;   "We expect the encoding to be LF UTF-8, so only show the modeline when this is not the case"
-;;   (setq-local doom-modeline-buffer-encoding
-;;               (unless (and (memq (plist-get (coding-system-plist buffer-file-coding-system) :category)
-;;                                  '(coding-category-undecided coding-category-utf-8))
-;;                            (not (memq (coding-system-eol-type buffer-file-coding-system) '(1 2))))
-;;                 t)))
-
-;; (add-hook 'after-change-major-mode-hook #'doom-modeline-conditional-buffer-encoding)
-
 
 (setq-default
  history-length 1000
@@ -114,6 +108,7 @@
 ;;               (unless (or (eq buffer-file-coding-system 'utf-8-unix)
 ;;                           (eq buffer-file-coding-system 'utf-8)))))
 ;; (add-hook 'after-change-major-mode-hook #'doom-modeline-conditional-buffer-encoding)
+
 ;; Windows Layout
 ;; (map! :map evil-window-map
 ;;       "SPC" #'rotate-layout
@@ -155,7 +150,7 @@
   (setq org-log-into-drawer t)
   (setq org-support-shift-select t))
 
-(after! org
+(after! ox-latex
   (add-to-list 'org-latex-classes
                '("ethz"
                "\\documentclass[a4paper,11pt,titlepage]{memoir}
@@ -354,6 +349,14 @@ See `org-capture-templates' for more information."
                (file+headline "~/posts.org" "Inbox")
                ;;(file+olp "/home/burgess/Documents/Org/posts.org" "blog")
                (function org-hugo-new-subtree-post-capture-template))))
+
+(after! 'org
+  (org-babel-do-load-languages 'org-babel-load-languages
+                               (append org-babel-load-languages
+                                       ;; '((julia . t))
+                                        '((latex . t))
+                                        )))
+
 ;; Org visual settings
 ;; (add-hook! org-mode :append
            ;; #'visual-line-mode

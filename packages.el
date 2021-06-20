@@ -60,3 +60,7 @@
 (package! pcre2el)
 (package! visual-regexp-steroids)
 (package! package-lint)
+(package! calctex :recipe (:host github :repo "johnbcoughlin/calctex"
+                           :files ("*.el" "calctex/*.el" "calctex-contrib/*.el" "org-calctex/*.el" "vendor"))
+  :pin "7fa2673c64e259e04aef684ccf09ef85570c388b")
+(package! info-colors :pin "47ee73cc19b1049eef32c9f3e264ea7ef2aaf8a5")

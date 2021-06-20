@@ -49,12 +49,12 @@
        modeline                                         ; snazzy, Atom-inspired modeline, plus API
        nav-flash                                        ; blink cursor line after big motions
        ;;neotree                                        ; a project drawer, like NERDTree for vim
-       ;; ophints                                          ; highlight the region an operation acts on
+       ;; ophints                                       ; highlight the region an operation acts on
        (popup                                           ; tame sudden yet inevitable temporary windows
         +all                                            ; catch all popups that start with an asterix
         +defaults)                                      ; Enables reasonable default popup rules for a variety of buffers
        ;;tabs                                           ; a tab bar for Emacs
-       treemacs                                         ; a project drawer, like neotree but cooler
+       (treemacs +lsp)                                  ; a project drawer, like neotree but cooler
        unicode                                          ; extended unicode support for various languages
        vc-gutter                                        ; vcs diff in the fringe
        vi-tilde-fringe                                  ; fringe tildes to mark beyond EOB
@@ -66,7 +66,7 @@
        :editor
        (evil +everywhere)                               ; come to the dark side, we have cookies
        ;; file-templates                                ; auto-snippets for empty files
-       fold                                          ; (nigh) universal code folding
+       fold                                             ; (nigh) universal code folding
        ;;(format +onsave)                               ; automated prettiness
        ;;god                                            ; run Emacs commands without modifier keys
        ;;lispy                                          ; vim for lisp, for people who don't like vim
@@ -102,7 +102,7 @@
        ;;debugger                                       ; FIXME stepping through code, to help you add bugs
        ;;direnv
        ;;docker
-       ;; editorconfig                                   ; let someone else argue about tabs vs spaces
+       ;; editorconfig                                  ; let someone else argue about tabs vs spaces
        ;;ein                                            ; tame Jupyter notebooks with emacs
        (eval +overlay)                                  ; run code, run (also, repls)
        ;;gist                                           ; interacting with github gists
@@ -112,12 +112,12 @@
         +forge)                                         ; interface with git forges
        make                                             ; run make tasks from Emacs
        ;;pass                                           ; password manager for nerds
-       pdf                                            ; pdf enhancements
+       pdf                                              ; pdf enhancements
        ;;prodigy                                        ; FIXME managing external services & code builders
        ;;rgb                                            ; creating color strings
        ;;taskrunner                                     ; taskrunner for all your projects
        ;;terraform                                      ; infrastructure as code
-       tmux                                           ; an API for interacting with tmux
+       tmux                                             ; an API for interacting with tmux
        ;;upload                                         ; map local to remote projects via ssh/ftp
 
        :os
@@ -126,7 +126,7 @@
 
        :lang
        ;;agda                                           ; types of types of types of types...
-       ;;cc                                             ; C/C++/Obj-C madness
+       (cc +lsp)                                        ; C/C++/Obj-C madness
        ;;clojure                                        ; java with a lisp
        common-lisp                                      ; if you've seen one lisp, you've seen them all
        ;;coq                                            ; proofs-as-programs

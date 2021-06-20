@@ -8,15 +8,11 @@
  '(display-battery-mode t)
  '(display-time-mode t)
  '(menu-bar-mode t)
+ '(package-selected-packages
+   '(cmake-mode easy-hugo evil-tex cdlatex auctex-cluttex auctex-lua auto-complete-auctex auctex-latexmk company-auctex auctex s))
  '(show-paren-mode t)
  '(size-indication-mode t)
- '(tool-bar-mode nil)
- ;; ;; '(org-journal-date-format "%A, %Y-%m-%d" t)
- ;; '(org-journal-date-prefix "#+TITLE: " t)
- ;; '(org-journal-dir "~/org/journals/" t)
- ;; '(org-journal-file-format "%Y-%m-%d.org" t)
- ;; '(package-selected-packages (quote (org-fancy-priorities)))
- )
+ '(tool-bar-mode nil))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -24,8 +20,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(doom-modeline-buffer-modified ((t (:foreground "orange"))))
- '(doom-modeline-evil-insert-state ((t (:weight bold :foreground "#339CDB"))))
- )
+ '(doom-modeline-evil-insert-state ((t (:weight bold :foreground "#339CDB")))))
 
 (setq vterm-module-cmake-args "-DUSE_SYSTEM_LIBVTERM=yes")
 
